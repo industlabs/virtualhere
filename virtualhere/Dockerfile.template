@@ -1,6 +1,17 @@
 FROM alpine:latest
 
-RUN apk add --no-cache --update abuild bc binutils build-base cmake gcc ncurses-dev sed ca-certificates wget libarchive-tools \
+RUN apk add --no-cache --update \
+    abuild \
+    bc \
+    binutils \
+    build-base \
+    cmake \
+    gcc \
+    ncurses-dev \
+    sed \
+    ca-certificates \
+    wget \
+    libarchive-tools \
     && KERNELVER=$(uname -r  | cut -d '-' -f 1) \
     && wget -nv -P /srv https://www.kernel.org/pub/linux/kernel/v4.x/linux-$KERNELVER.tar.gz \
     && bsdtar -C /srv -zxf /srv/linux-$KERNELVER.tar.gz \
