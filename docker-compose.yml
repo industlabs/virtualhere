@@ -6,5 +6,6 @@ services:
     restart: always
     build: ./virtualhere
     privileged: true
+    ## network_mode: host
     ports: 
       - 7575:7575
