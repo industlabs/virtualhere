@@ -28,7 +28,7 @@ RUN apk add --no-cache --update ca-certificates curl gcc make musl-dev \
     && cp /srv/linux-$KERNELVER/drivers/usb/usbip/usbip-core.ko / \
     && cp /srv/linux-$KERNELVER/drivers/usb/usbip/vhci-hcd.ko / \
     && rm -rf /srv/linux-$KERNELVER \
-    && apk del abuild bc binutils build-base cmake gcc ncurses-dev sed ca-certificates wget libarchive-tools
+    && apk del abuild bc binutils build-base cmake gcc ncurses-dev sed ca-certificates wget libarchive-tools \
     && mkdir -p /dist \
     && cd drivers/usb/usbip \
     && cp usbip-core.ko vhci-hcd.ko /dist \
